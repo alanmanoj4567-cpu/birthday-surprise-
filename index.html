@@ -118,20 +118,50 @@
   </div>
  </section>
 
- <section class="section" id="surprises">
+<section class="section" id="surprises">
   <div class="gift-section">
-   <div class="eyebrow">psst... one last thing</div><h2 style="font-weight:normal;font-size:clamp(34px,6vw,48px);margin:10px 0;color:#753c54">Your birthday surprises</h2>
-   <p style="color:#967682;line-height:1.7">Three little gifts, made just for you. Tap each present to open it. 🎀</p>
-   <div class="gift-row">
-    <button class="gift-choice" onclick="openSurprise(1)"><span class="gift-emoji">🎁</span><h3>Surprise One</h3><p>A memory to keep</p></button>
-    <button class="gift-choice" onclick="openSurprise(2)"><span class="gift-emoji">🎀</span><h3>Surprise Two</h3><p>A message from my heart</p></button>
-    <button class="gift-choice" onclick="openSurprise(3)"><span class="gift-emoji">🎂</span><h3>Surprise Three</h3><p>Make a birthday wish</p></button>
+   <div class="eyebrow">A LITTLE MAGIC, JUST FOR YOU</div>
+   <h2 style="font-weight:normal;font-size:clamp(34px,6vw,48px);margin:10px 0;color:#8b6b42">Your Birthday Surprises ✨</h2>
+   <p style="color:#967f67;line-height:1.7">Three gifts, three little pieces of my heart. Open them one by one, my love. ♡</p>   <div class="gift-row">
+    <button class="gift-choice" onclick="openSurprise(1)">
+     <span class="gift-emoji">💌</span>
+     <h3>GIFT 1</h3>
+     <p>A little piece of my heart</p>
+    </button>
+    <button class="gift-choice" onclick="openSurprise(2)">
+     <span class="gift-emoji">🎀</span>
+     <h3>GIFT 2</h3>
+     <p>Every moment with you</p>
+    </button>
+    <button class="gift-choice" onclick="openSurprise(3)">
+     <span class="gift-emoji">🎁</span>
+     <h3>GIFT 3</h3>
+     <p>Something special for you</p>
+    </button>
+   </div>   <div class="reveal-box" id="gift1">
+    <div class="eyebrow">GIFT NO. 01</div>
+    <h2 style="font-weight:normal;color:#8b6b42">A Letter for My Favourite Person 💌</h2>
+    <img src="photos/gift-1.jpg" alt="Your first birthday gift" style="width:100%;max-width:420px;border-radius:16px;display:block;margin:20px auto;object-fit:cover" onerror="this.style.display='none'">
+    <p>My love, if I could give you one thing in this world, it would be the ability to see yourself through my eyes. Then you would understand how special you are to me. Thank you for being part of my life and making ordinary days feel beautiful. No matter how many birthdays come and go, I hope I get to celebrate many more of them beside you. You are loved more than these words can ever explain. ♡</p>
+    <button class="pill" onclick="closeSurprises()">Back to my gifts ♡</button>
+   </div>   <div class="reveal-box" id="gift2">
+    <div class="eyebrow">GIFT NO. 02</div>
+    <h2 style="font-weight:normal;color:#8b6b42">Our Little World 📸</h2>
+    <img src="photos/gift-2.jpg" alt="Your second birthday gift" style="width:100%;max-width:420px;border-radius:16px;display:block;margin:20px auto;object-fit:cover" onerror="this.style.display='none'">
+    <p>Every memory with you has a special place in my heart. The little conversations, the silly moments, the smiles, and even the days when all we need is each other. I don't need every moment to be perfect; I just want it to be ours. And if I could live some moments all over again, I would choose so many of them with you. Here's to all the memories we've made and all the beautiful ones waiting for us. ❤️</p>
+    <button class="pill" onclick="closeSurprises()">Back to my gifts ♡</button>
+   </div>   <div class="reveal-box" id="gift3">
+    <div class="eyebrow">GIFT NO. 03 · THE FINAL SURPRISE</div>
+    <h2 style="font-weight:normal;color:#8b6b42">Happy Birthday, Birthday Girl ✨</h2>
+    <img src="photos/gift-3.jpg" alt="Your final birthday gift" style="width:100%;max-width:420px;border-radius:16px;display:block;margin:20px auto;object-fit:cover" onerror="this.style.display='none'">
+    <div class="cake">🎂</div>
+    <p>You deserve a year filled with happiness, peace, laughter, and every little thing that makes your heart smile. Keep shining, keep dreaming, and never forget how precious you are to me. Today is your day, my love. Make a beautiful wish. ♡</p>
+    <p id="wishText">Close your eyes, make your wish, and tap the button when you're ready.</p>
+    <button class="pill" onclick="makeWish()">Make a Birthday Wish 💗</button>
+    <button class="pill" onclick="closeSurprises()">Back to my gifts ♡</button>
    </div>
-   <div class="reveal-box" id="gift1"><h2 style="font-weight:normal">Our little memory 📸</h2><img src="photos/surprise-photo.jpg" alt="Surprise photo" onerror="this.style.display='none'"><p>This is one of the moments I wish I could pause and keep forever. My favourite memories are the ones that have you in them. ♡</p></div>
-   <div class="reveal-box" id="gift2"><h2 style="font-weight:normal">A little promise 💌</h2><p>I promise to keep choosing you in the little ways: to listen, to cheer you on, to laugh with you, and to keep making space for our story to grow. You mean so much to me. ❤️</p></div>
-   <div class="reveal-box" id="gift3"><div class="cake">🎂</div><h2 style="font-weight:normal">Make a wish, birthday girl ✨</h2><p id="wishText">Close your eyes, make your wish, and tap the button below when you're ready.</p><button class="pill" onclick="makeWish()">Blow out the candle 💗</button></div>
   </div>
- </section>
+</section>
  <footer class="footer">made with ♡, just for you<br>✧ ✧ ✧</footer>
 </div>
 <div class="confetti" id="confetti"></div>
@@ -148,7 +178,10 @@ function backspace(){enteredCode=enteredCode.slice(0,-1);updateDots();document.g
 function checkCode(){if(enteredCode===SECRET_CODE){document.getElementById("lockScreen").style.display="none";document.getElementById("unlockedScreen").style.display="flex";window.scrollTo(0,0);celebrate();}else{document.getElementById("codeError").textContent="Oops, try our special code again 💗";enteredCode="";updateDots();}}
 function enterSite(which){document.getElementById("unlockedScreen").style.display="none";document.getElementById("mainSite").classList.add("show");window.scrollTo(0,0);if(which){setTimeout(()=>{document.getElementById("surprises").scrollIntoView({behavior:"smooth"});openSurprise(which);},250);}}
 function openSurprise(n){document.querySelectorAll(".reveal-box").forEach(el=>el.classList.remove("open"));const box=document.getElementById("gift"+n);box.classList.add("open");setTimeout(()=>box.scrollIntoView({behavior:"smooth",block:"center"}),80);if(n===3)celebrate();}
-function makeWish(){document.getElementById("wishText").textContent="Wish made! May this year bring you every beautiful thing your heart is hoping for. I love you! 💗";celebrate();}
+function makeWish(){document.getElementById("wishText").textContent="Wish made! May this year bring you every beautiful thing your heart is hoping for. I love you! 💗";celebrate();}function closeSurprises(){
+  document.querySelectorAll(".reveal-box").forEach(el=>el.classList.remove("open"));
+  document.getElementById("surprises").scrollIntoView({behavior:"smooth"});
+}
 function celebrate(){const c=document.getElementById("confetti");const pieces=["💗","♡","🌸","✨","🎀"];for(let i=0;i<28;i++){const s=document.createElement("span");s.textContent=pieces[Math.floor(Math.random()*pieces.length)];s.style.left=Math.random()*100+"%";s.style.animationDelay=Math.random()*.8+"s";c.appendChild(s);setTimeout(()=>s.remove(),3500);}}
 function toggleMusic(){const audio=document.getElementById("ourSong"),label=document.getElementById("musicLabel");if(audio.paused){audio.play().then(()=>label.textContent="Pause our song").catch(()=>label.textContent="Add music/our-song.mp3");}else{audio.pause();label.textContent="Play our song";}}
 </script>
