@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fff0f4">
+<title>Our Little World ♡</title>
+<style>
+:root{--bg:#fff0f4;--pink:#f7cbd7;--rose:#d65f83;--deep:#713d54;--soft:#fff9fa;--lilac:#e9e1fb;--muted:#987783;--line:#efdce2}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--deep);font-family:Georgia,'Times New Roman',serif}button,input{font:inherit}button{cursor:pointer}.screen{min-height:100svh}.lock-screen{display:flex;align-items:center;justify-content:center;padding:22px;background:radial-gradient(ellipse at 20% 20%,#fff8fa 0,#fff0f4 52%,#fbe1e9 100%);position:relative;overflow:hidden}.lock-screen:before,.lock-screen:after{content:"♡";position:absolute;color:#e9b6c6;font-size:100px;opacity:.42}.lock-screen:before{left:4%;bottom:4%;transform:rotate(-20deg)}.lock-screen:after{right:4%;top:4%;transform:rotate(15deg)}.lock-panel{z-index:1;width:min(900px,100%);display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:30px;padding:clamp(22px,5vw,48px);border:1px solid #fff;border-radius:30px;background:#fff9f9d9;box-shadow:0 22px 70px #a9617c18}.heart-photos{display:flex;justify-content:center;align-items:center;gap:4px}.heart-frame{width:48%;aspect-ratio:1;clip-path:path("M 100 30 C 100 -5 45 -5 45 35 C 45 60 75 82 100 100 C 125 82 155 60 155 35 C 155 -5 100 -5 100 30 Z");clip-path:polygon(50% 100%,10% 67%,0 45%,4% 23%,20% 8%,39% 9%,50% 24%,61% 9%,80% 8%,96% 23%,100% 45%,90% 67%);background:#f6d5df;border:0;padding:8px;position:relative}.heart-frame img{width:100%;height:100%;object-fit:cover;clip-path:inherit;background:#f4dce4}.lock-copy{text-align:center}.script{font-family:"Brush Script MT","Segoe Script",cursive;font-style:italic;font-weight:normal}.lock-copy h1{font-size:clamp(27px,4vw,43px);font-weight:normal;font-style:italic;color:#bd7890;margin:0 0 10px}.lock-copy p{font-size:14px;color:var(--muted);line-height:1.6}.code-dots{display:flex;gap:9px;justify-content:center;margin:22px 0}.code-dot{width:46px;height:45px;border:1px solid #ead1db;background:#fff8fa;border-radius:13px;display:grid;place-items:center;color:var(--rose);box-shadow:0 3px 7px #b55f7a0d}.keypad{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;max-width:250px;margin:auto}.key{border:1px solid #ead4dc;background:#fff9f7;color:#7e5968;border-radius:999px;padding:10px 4px;box-shadow:0 3px 0 #f0dce3;font-size:16px}.key:active{transform:translateY(2px);box-shadow:none}.key.heart{background:#f3b5c6;color:white}.error{height:18px;color:#c64e76;font:12px Arial,sans-serif;margin-top:10px}.main-site{display:none}.main-site.show{display:block}.hero{min-height:95svh;display:flex;align-items:center;justify-content:center;text-align:center;padding:60px 20px;position:relative;overflow:hidden;background:linear-gradient(140deg,#fff2f5,#fde5eb 55%,#f6eafa)}.hero:after{content:"♡";position:absolute;right:3%;bottom:10%;font-size:130px;color:#f0bfd0;opacity:.55}.music-toggle{position:absolute;right:16px;top:16px;border:1px solid #efd8e0;background:#fff9f7d9;color:#9b667a;border-radius:999px;padding:10px 13px;font:12px Arial,sans-serif}.hero-inner{max-width:760px;z-index:1}.hero h1{font-size:clamp(48px,9vw,88px);font-weight:normal;line-height:.98;margin:0;color:#753c54}.hero h1 em{display:block;color:#d65f83;font-weight:normal}.hero p{max-width:510px;margin:24px auto;font-size:17px;line-height:1.7;color:#8d6877}.pill{border:0;border-radius:999px;padding:13px 22px;background:var(--rose);color:white;box-shadow:0 8px 22px #c45d7d32}.tiny{font:11px Arial,sans-serif;color:#a78390;margin-top:14px}.section{padding:80px 20px;max-width:1100px;margin:auto}.section-head{text-align:center;margin-bottom:32px}.eyebrow{text-transform:uppercase;letter-spacing:.22em;font:10px Arial,sans-serif;color:#bd6c88}.section-head h2{font-size:clamp(34px,6vw,49px);font-weight:normal;margin:10px 0;color:#753c54}.section-head p{color:#967682;line-height:1.7;font-size:15px;max-width:600px;margin:0 auto}.collage{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:155px;gap:12px}.photo-card{position:relative;overflow:hidden;border-radius:14px;background:linear-gradient(145deg,#f8dbe4,#e9e1fb);border:1px solid #f0dce4;min-height:130px}.photo-card img{width:100%;height:100%;object-fit:cover;display:block}.photo-card .placeholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:12px;color:#a27688;background:linear-gradient(145deg,#f7dce5,#fff5e9)}.placeholder b{font-size:27px;font-weight:normal;margin-bottom:8px}.placeholder span{font:12px Arial,sans-serif}.photo-card.tall{grid-row:span 2}.photo-card.wide{grid-column:span 2}.photo-card.quote{background:#7b625e;color:#fff5f3;display:flex;align-items:center;justify-content:center;padding:20px;font-size:clamp(18px,3vw,29px);font-style:italic}.photo-card.quote small{display:block;font:10px Arial,sans-serif;letter-spacing:.15em;margin-top:10px}.letter-card{position:relative;background:#fffafa;border:1px solid #f0dfe5;border-radius:25px;padding:clamp(24px,5vw,48px);max-width:850px;margin:auto;box-shadow:0 15px 45px #b66c8410;line-height:1.95;font-size:16px}.letter-card:before{content:"♥";position:absolute;top:-15px;left:calc(50% - 18px);padding:0 10px;background:var(--bg);color:var(--rose)}.letter-card p{margin:0 0 17px}.signature{font-family:"Brush Script MT","Segoe Script",cursive;font-style:italic;font-size:25px;color:var(--rose);line-height:1.6}.reasons{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.reason{border:1px solid #f0dce3;background:#fff9fa;border-radius:17px;padding:22px 16px;text-align:center;line-height:1.6;font-size:14px}.reason b{display:block;font-size:22px;font-weight:normal;margin-bottom:10px}.gift-section{background:linear-gradient(130deg,#f8dfe7,#fff7f2,#f4eafa);border:1px solid #f1dbe4;border-radius:26px;padding:35px 20px;text-align:center}.gift-row{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:850px;margin:25px auto 0}.gift-choice{background:#fff9fa;border:1px solid #f0d7e1;border-radius:20px;padding:22px 12px;min-height:190px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;transition:transform .2s,box-shadow .2s}.gift-choice:hover{transform:translateY(-4px);box-shadow:0 10px 24px #b66c8418}.gift-emoji{font-size:58px;filter:drop-shadow(0 5px 4px #b76d7c20)}.gift-choice h3{font-weight:normal;color:#a84e70;font-size:20px;margin:0}.gift-choice p{font:12px Arial,sans-serif;color:#967682;line-height:1.5;margin:0}.reveal-box{display:none;background:#fffafb;border:1px solid #f0dce3;border-radius:20px;padding:22px;margin:20px auto 0;max-width:680px;line-height:1.8;animation:pop .35s ease}.reveal-box.open{display:block}.reveal-box img{max-width:100%;max-height:420px;object-fit:contain;border-radius:14px}.cake{font-size:75px;display:inline-block;animation:bob 1.5s infinite ease-in-out}.footer{text-align:center;padding:30px 15px 50px;color:#a17c8a;font-size:12px}@keyframes pop{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}@keyframes bob{50%{transform:translateY(-7px)}}.confetti{position:fixed;inset:0;pointer-events:none;z-index:99;overflow:hidden}.confetti span{position:absolute;top:-20px;animation:fall 2.8s linear forwards;font-size:22px}@keyframes fall{to{transform:translateY(110vh) rotate(500deg);opacity:.1}}
+.unlocked-screen{min-height:100svh;display:none;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:30px 18px;background:radial-gradient(ellipse at 20% 15%,#fff8fa 0,#fbe0e8 50%,#f8d4e0 100%)}
+.unlocked-screen:before{content:"";position:absolute;inset:0;opacity:.22;background-image:radial-gradient(#fff 1.2px,transparent 1.2px);background-size:19px 19px;pointer-events:none}
+.unlocked-inner{position:relative;z-index:1;text-align:center;width:min(900px,100%);padding:25px 12px}
+.unlocked-inner h1{font-family:Arial,sans-serif;font-weight:800;font-size:clamp(32px,6vw,54px);color:#d34e7b;margin:0 0 12px;letter-spacing:-1px}
+.unlocked-inner>p{font-family:Arial,sans-serif;font-size:clamp(15px,2.5vw,21px);font-weight:600;color:#89556b;margin:0}
+.unlock-decor{position:absolute;color:#e99bb7;font-size:44px;opacity:.75}.unlock-heart-one{left:1%;bottom:6%}.unlock-heart-two{right:2%;top:5%}.unlock-ribbon{position:absolute;right:4%;top:-35px;font-size:54px;transform:rotate(12deg);opacity:.8}
+.unlock-gifts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,5vw,55px);align-items:center;margin:55px auto 20px;max-width:830px}
+.unlock-gift{border:0;background:transparent;color:#9b526f;display:flex;flex-direction:column;align-items:center;gap:12px;font:600 13px Arial,sans-serif}
+.blue-gift{font-size:clamp(70px,12vw,120px);filter:drop-shadow(0 8px 3px #9c6b7720);transition:transform .2s;display:block}
+.unlock-gift:hover .blue-gift,.unlock-gift:focus-visible .blue-gift{transform:translateY(-7px) rotate(-3deg)}
+.unlock-hint{font-family:"Brush Script MT","Segoe Script",cursive;font-size:20px;color:#b56d89;margin-top:20px}
+@media(max-width:500px){.unlock-gifts{gap:5px;margin-top:42px}.blue-gift{font-size:clamp(58px,17vw,88px)}.unlock-gift{font-size:11px}.unlocked-inner{padding:22px 2px}}
+
+@media(max-width:700px){.lock-panel{grid-template-columns:1fr;gap:18px}.heart-photos{max-width:340px;margin:auto}.heart-frame{max-width:150px}.lock-copy h1{font-size:32px}.collage{grid-template-columns:repeat(2,1fr);grid-auto-rows:140px}.photo-card.tall{grid-row:span 2}.photo-card.wide{grid-column:span 2}.reasons{grid-template-columns:repeat(2,1fr)}.gift-row{grid-template-columns:1fr}.gift-choice{min-height:150px}.section{padding:60px 17px}.hero{min-height:85svh}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<!-- EDIT HERE: secret code is 1430; change it in the CONFIG section at the bottom of this file. -->
+<section class="screen lock-screen" id="lockScreen">
+ <div class="lock-panel">
+  <div class="heart-photos">
+   <div class="heart-frame"><img src="photos/our-photo.jpg" alt="Your photo" onerror="this.src='https://placehold.co/320x320/f8dce6/a34f70?text=Your+photo'"></div>
+   <div class="heart-frame"><img src="photos/her-photo.jpg" alt="Her photo" onerror="this.src='https://placehold.co/320x320/f8dce6/a34f70?text=Her+photo'"></div>
+  </div>
+  <div class="lock-copy">
+   <h1 class="script">Enter our secret code 💗</h1>
+   <p>A tiny secret, just for us.</p>
+   <div class="code-dots" id="codeDots"><div class="code-dot">♡</div><div class="code-dot">♡</div><div class="code-dot">♡</div><div class="code-dot">♡</div></div>
+   <div class="keypad">
+    <button class="key" onclick="pressDigit('1')">1</button><button class="key" onclick="pressDigit('2')">2</button><button class="key" onclick="pressDigit('3')">3</button>
+    <button class="key" onclick="pressDigit('4')">4</button><button class="key" onclick="pressDigit('5')">5</button><button class="key" onclick="pressDigit('6')">6</button>
+    <button class="key" onclick="pressDigit('7')">7</button><button class="key" onclick="pressDigit('8')">8</button><button class="key" onclick="pressDigit('9')">9</button>
+    <button class="key" onclick="backspace()">⌫</button><button class="key" onclick="pressDigit('0')">0</button><button class="key heart" onclick="checkCode()">♥</button>
+   </div><div class="error" id="codeError">Enter the 4-digit code, then tap ♥</div>
+  </div>
+ </div>
+</section>
+
+
+<section class="screen unlocked-screen" id="unlockedScreen" style="display:none">
+ <div class="unlocked-inner">
+  <div class="unlock-decor unlock-heart-one">♡</div><div class="unlock-decor unlock-heart-two">♡</div>
+  <div class="unlock-ribbon">🎀</div>
+  <h1>You unlocked it</h1>
+  <p>Your surprises are waiting for you</p>
+  <div class="unlock-gifts">
+   <button class="unlock-gift" onclick="enterSite(1)"><span class="blue-gift">🎁</span><span>Surprise One</span></button>
+   <button class="unlock-gift" onclick="enterSite(2)"><span class="blue-gift">🎁</span><span>Surprise Two</span></button>
+   <button class="unlock-gift" onclick="enterSite(3)"><span class="blue-gift">🎁</span><span>Surprise Three</span></button>
+  </div>
+  <div class="unlock-hint">Choose a little gift, made just for you ♡</div>
+ </div>
+</section>
+
+<div class="main-site" id="mainSite">
+ <section class="hero" id="top">
+  <button class="music-toggle" onclick="toggleMusic()">♫ <span id="musicLabel">Play our song</span></button>
+  <audio id="ourSong" loop><source src="music/our-song.mp3" type="audio/mpeg"></audio>
+  <div class="hero-inner">
+   <div class="eyebrow">a little website, made with love</div>
+   <h1>Happy Birthday,<em id="herName">my love ♡</em></h1>
+   <p>To my favourite person in this whole world — today is all about you, and the happiness you bring into my life.</p>
+   <button class="pill" onclick="document.getElementById('surprises').scrollIntoView({behavior:'smooth'})">Open your little surprise ↓</button>
+   <div class="tiny">made just for you, with all my heart</div>
+  </div>
+ </section>
+
+ <section class="section" id="memories">
+  <div class="section-head"><div class="eyebrow">little moments, big feelings</div><h2>Our little world</h2><p>Some of my favourite memories have you in them. Replace these photo cards with your favourite pictures together before sharing the page.</p></div>
+  <div class="collage">
+   <div class="photo-card tall"><img src="photos/photo-1.jpg" alt="Our favourite photo" onerror="this.style.display='none'"><div class="placeholder"><b>📷</b><span>Our favourite photo<br>photos/photo-1.jpg</span></div></div>
+   <div class="photo-card"><img src="photos/photo-2.jpg" alt="Your prettiest smile" onerror="this.style.display='none'"><div class="placeholder"><b>🌷</b><span>Your prettiest smile</span></div></div>
+   <div class="photo-card quote">DO MORE<br>OF WHAT<br>YOU LOVE</div>
+   <div class="photo-card"><img src="photos/photo-3.jpg" alt="A memory" onerror="this.style.display='none'"><div class="placeholder"><b>✨</b><span>A memory I keep close</span></div></div>
+   <div class="photo-card tall"><img src="photos/photo-4.jpg" alt="Us being us" onerror="this.style.display='none'"><div class="placeholder"><b>💗</b><span>Us, being us</span></div></div>
+   <div class="photo-card wide"><img src="photos/photo-5.jpg" alt="A favourite day" onerror="this.style.display='none'"><div class="placeholder"><b>🌸</b><span>A day I wish I could relive</span></div></div>
+   <div class="photo-card quote">LIVE IN THE MOMENT<small>WITH YOU, ALWAYS</small></div>
+   <div class="photo-card"><img src="photos/photo-6.jpg" alt="Another memory" onerror="this.style.display='none'"><div class="placeholder"><b>🦋</b><span>My favourite person</span></div></div>
+  </div>
+ </section>
+
+ <section class="section" id="letter">
+  <div class="section-head"><div class="eyebrow">from my heart to yours</div><h2>A letter for you</h2></div>
+  <div class="letter-card">
+   <p>My sweetest girl,</p>
+   <p>Happy birthday, love. I wish I could wrap all the happiness you have given me into a little gift and give it right back to you. You make ordinary days feel special, and even the smallest moments become memories I want to keep forever.</p>
+   <p>I hope this new year of your life brings you the kind of joy you give to everyone around you. I hope you always remember how precious you are, how much you deserve, and how deeply you are loved — especially by me.</p>
+   <p>Thank you for being you. If I could choose again, I would still choose you, in every little moment and every version of our story.</p>
+   <p>Today, tomorrow, and all the days after that, I’m cheering for you.</p>
+   <p class="signature">All my love, always ♡<br>Your favourite person</p>
+  </div>
+ </section>
+
+ <section class="section">
+  <div class="section-head"><div class="eyebrow">one list could never be enough</div><h2>Reasons I love you</h2><p>A few little things about you that have a very big place in my heart.</p></div>
+  <div class="reasons">
+   <div class="reason"><b>♡</b>Your smile can turn my whole day around.</div><div class="reason"><b>☼</b>You make me feel safe just by being you.</div><div class="reason"><b>✿</b>The little things you do without even noticing.</div><div class="reason"><b>☁</b>I can be completely myself around you.</div><div class="reason"><b>✧</b>Your heart, your kindness, and your way of caring.</div><div class="reason"><b>∞</b>Every memory with you becomes a favourite.</div>
+  </div>
+ </section>
+
+ <section class="section" id="surprises">
+  <div class="gift-section">
+   <div class="eyebrow">psst... one last thing</div><h2 style="font-weight:normal;font-size:clamp(34px,6vw,48px);margin:10px 0;color:#753c54">Your birthday surprises</h2>
+   <p style="color:#967682;line-height:1.7">Three little gifts, made just for you. Tap each present to open it. 🎀</p>
+   <div class="gift-row">
+    <button class="gift-choice" onclick="openSurprise(1)"><span class="gift-emoji">🎁</span><h3>Surprise One</h3><p>A memory to keep</p></button>
+    <button class="gift-choice" onclick="openSurprise(2)"><span class="gift-emoji">🎀</span><h3>Surprise Two</h3><p>A message from my heart</p></button>
+    <button class="gift-choice" onclick="openSurprise(3)"><span class="gift-emoji">🎂</span><h3>Surprise Three</h3><p>Make a birthday wish</p></button>
+   </div>
+   <div class="reveal-box" id="gift1"><h2 style="font-weight:normal">Our little memory 📸</h2><img src="photos/surprise-photo.jpg" alt="Surprise photo" onerror="this.style.display='none'"><p>This is one of the moments I wish I could pause and keep forever. My favourite memories are the ones that have you in them. ♡</p></div>
+   <div class="reveal-box" id="gift2"><h2 style="font-weight:normal">A little promise 💌</h2><p>I promise to keep choosing you in the little ways: to listen, to cheer you on, to laugh with you, and to keep making space for our story to grow. You mean so much to me. ❤️</p></div>
+   <div class="reveal-box" id="gift3"><div class="cake">🎂</div><h2 style="font-weight:normal">Make a wish, birthday girl ✨</h2><p id="wishText">Close your eyes, make your wish, and tap the button below when you're ready.</p><button class="pill" onclick="makeWish()">Blow out the candle 💗</button></div>
+  </div>
+ </section>
+ <footer class="footer">made with ♡, just for you<br>✧ ✧ ✧</footer>
+</div>
+<div class="confetti" id="confetti"></div>
+<script>
+// ===================== CONFIG: EDIT THESE =====================
+const SECRET_CODE = "1430"; // Change this to your 4-digit secret code.
+const GIRLFRIEND_NAME = "my love"; // Change to her name or nickname.
+// ==============================================================
+document.getElementById("herName").textContent = GIRLFRIEND_NAME + " ♡";
+let enteredCode = "";
+function updateDots(){const dots=[...document.querySelectorAll(".code-dot")];dots.forEach((d,i)=>d.textContent=enteredCode[i]?"♥":"♡");}
+function pressDigit(d){if(enteredCode.length<4){enteredCode+=d;updateDots();}if(enteredCode.length===4)document.getElementById("codeError").textContent="Tap ♥ to unlock your surprise";}
+function backspace(){enteredCode=enteredCode.slice(0,-1);updateDots();document.getElementById("codeError").textContent="Enter the 4-digit code, then tap ♥";}
+function checkCode(){if(enteredCode===SECRET_CODE){document.getElementById("lockScreen").style.display="none";document.getElementById("unlockedScreen").style.display="flex";window.scrollTo(0,0);celebrate();}else{document.getElementById("codeError").textContent="Oops, try our special code again 💗";enteredCode="";updateDots();}}
+function enterSite(which){document.getElementById("unlockedScreen").style.display="none";document.getElementById("mainSite").classList.add("show");window.scrollTo(0,0);if(which){setTimeout(()=>{document.getElementById("surprises").scrollIntoView({behavior:"smooth"});openSurprise(which);},250);}}
+function openSurprise(n){document.querySelectorAll(".reveal-box").forEach(el=>el.classList.remove("open"));const box=document.getElementById("gift"+n);box.classList.add("open");setTimeout(()=>box.scrollIntoView({behavior:"smooth",block:"center"}),80);if(n===3)celebrate();}
+function makeWish(){document.getElementById("wishText").textContent="Wish made! May this year bring you every beautiful thing your heart is hoping for. I love you! 💗";celebrate();}
+function celebrate(){const c=document.getElementById("confetti");const pieces=["💗","♡","🌸","✨","🎀"];for(let i=0;i<28;i++){const s=document.createElement("span");s.textContent=pieces[Math.floor(Math.random()*pieces.length)];s.style.left=Math.random()*100+"%";s.style.animationDelay=Math.random()*.8+"s";c.appendChild(s);setTimeout(()=>s.remove(),3500);}}
+function toggleMusic(){const audio=document.getElementById("ourSong"),label=document.getElementById("musicLabel");if(audio.paused){audio.play().then(()=>label.textContent="Pause our song").catch(()=>label.textContent="Add music/our-song.mp3");}else{audio.pause();label.textContent="Play our song";}}
+</script>
+</body>
+</html>
