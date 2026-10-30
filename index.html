@@ -1196,6 +1196,33 @@ function makeWish(){document.getElementById("wishText").textContent="Wish made! 
 }
 function celebrate(){const c=document.getElementById("confetti");const pieces=["💗","♡","🌸","✨","🎀"];for(let i=0;i<28;i++){const s=document.createElement("span");s.textContent=pieces[Math.floor(Math.random()*pieces.length)];s.style.left=Math.random()*100+"%";s.style.animationDelay=Math.random()*.8+"s";c.appendChild(s);setTimeout(()=>s.remove(),3500);}}
 function toggleMusic(){const audio=document.getElementById("ourSong"),label=document.getElementById("musicLabel");if(audio.paused){audio.play().then(()=>label.textContent="Pause our song").catch(()=>label.textContent="Add music/our-song.mp3");}else{audio.pause();label.textContent="Play our song";}}
+
+function showMemoryPage(pageId) {
+  document.querySelectorAll(".memory-page").forEach(page => {
+    page.classList.remove("active");
+  });
+
+  const selectedPage = document.getElementById(pageId);
+
+  if (selectedPage) {
+    selectedPage.classList.add("active");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+}
+
+function finishMemoryPages() {
+  document.querySelectorAll(".memory-page").forEach(page => {
+    page.classList.remove("active");
+  });
+
+  // Change this selector to the ID of your next existing website section.
+  const nextSection = document.getElementById("mainContent");
+
+  if (nextSection) {
+    nextSection.scrollIntoView({ behavior: "smooth" });
+  }
+   }
+ 
 </script>
  
 <!-- ===== PAGE 2: PINK BIRTHDAY SCRAPBOOK ===== -->
