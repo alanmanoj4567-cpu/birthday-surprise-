@@ -201,7 +201,228 @@
     height: 54px !important;
   }
  }
-   
+/* VINTAGE BURGUNDY LAPTOP LOCK SCREEN */
+
+.lock-screen {
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 45px;
+  overflow: hidden;
+  position: relative;
+  background:
+    radial-gradient(ellipse at 18% 30%, rgba(150,35,48,.42), transparent 45%),
+    radial-gradient(ellipse at 85% 80%, rgba(65,5,18,.8), transparent 50%),
+    repeating-linear-gradient(
+      125deg,
+      #390b17 0px,
+      #4b101e 3px,
+      #35101a 6px,
+      #501522 10px
+    );
+}
+
+.lock-screen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .22;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent 0px,
+      rgba(255,220,200,.08) 1px,
+      transparent 2px,
+      transparent 5px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      rgba(0,0,0,.2) 1px,
+      transparent 3px
+    );
+}
+
+.lock-panel {
+  position: relative;
+  z-index: 1;
+  width: min(1150px, 100%);
+  min-height: 620px;
+  padding: 55px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 55px;
+  border: 1px solid rgba(242,205,190,.35);
+  background: rgba(48,8,19,.35);
+  box-shadow: 0 25px 70px rgba(0,0,0,.45);
+}
+
+.heart-photos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heart-frame {
+  position: relative;
+  width: min(360px, 100%);
+  aspect-ratio: 1;
+  padding: 12px;
+  box-sizing: border-box;
+  background: repeating-conic-gradient(
+    #f4d9ce 0deg 5deg,
+    #b98b83 5deg 10deg
+  );
+  clip-path: polygon(
+    50% 92%, 8% 51%, 3% 34%, 10% 17%,
+    25% 9%, 39% 13%, 50% 28%,
+    61% 13%, 75% 9%, 90% 17%,
+    97% 34%, 92% 51%
+  );
+  filter: drop-shadow(0 12px 18px rgba(0,0,0,.5));
+}
+
+.heart-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  clip-path: polygon(
+    50% 92%, 8% 51%, 3% 34%, 10% 17%,
+    25% 9%, 39% 13%, 50% 28%,
+    61% 13%, 75% 9%, 90% 17%,
+    97% 34%, 92% 51%
+  );
+}
+
+.heart-frame::after {
+  content: "🎀";
+  position: absolute;
+  top: 5%;
+  right: 12%;
+  font-size: 48px;
+  transform: rotate(15deg);
+  filter: drop-shadow(0 3px 3px #26040d);
+}
+
+.lock-copy {
+  text-align: center;
+  color: #f8e5df;
+}
+
+.lock-copy h1 {
+  color: #f4d4d0;
+  font-size: clamp(28px, 3vw, 43px);
+  margin-bottom: 12px;
+  text-shadow: 0 3px 12px rgba(0,0,0,.5);
+}
+
+.lock-copy p {
+  color: #e5b9b5;
+  letter-spacing: 1px;
+}
+
+.code-dots {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin: 30px 0;
+}
+
+.code-dot {
+  width: 62px;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e9b8b7;
+  border-radius: 17px;
+  background: linear-gradient(145deg, #f6d9d7, #c98288);
+  color: #741d31;
+  font-size: 29px;
+  box-shadow: 0 5px 13px rgba(0,0,0,.3);
+}
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 76px);
+  justify-content: center;
+  gap: 13px;
+  margin: 25px auto;
+}
+
+.key {
+  height: 68px;
+  border: 1px solid rgba(255,230,225,.65);
+  border-radius: 19px;
+  background: linear-gradient(145deg, #f5d8d5, #c9878d);
+  color: #571421;
+  font-size: 25px;
+  font-weight: 600;
+  box-shadow: 0 5px 0 #743443, 0 9px 14px rgba(0,0,0,.3);
+  cursor: pointer;
+  transition: .15s ease;
+}
+
+.key:active {
+  transform: translateY(4px);
+  box-shadow: 0 1px 0 #743443;
+}
+
+.key.heart {
+  background: linear-gradient(145deg, #a8324b, #671326);
+  color: #fff0ed;
+  border-color: #e8b2b2;
+}
+
+.error {
+  color: #f3c6c5;
+  font-size: 14px;
+  margin-top: 18px;
+}
+
+/* MOBILE VERSION */
+
+@media (max-width: 700px) {
+  .lock-screen {
+    padding: 20px 12px;
+  }
+
+  .lock-panel {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 25px 15px;
+    min-height: auto;
+  }
+
+  .heart-frame {
+    width: 210px;
+  }
+
+  .lock-copy h1 {
+    font-size: 27px;
+  }
+
+  .code-dot {
+    width: 48px;
+    height: 48px;
+  }
+
+  .keypad {
+    grid-template-columns: repeat(3, 65px);
+    gap: 11px;
+  }
+
+  .key {
+    height: 58px;
+  }
+}
+ 
 </style>
 </head>
 <body>
