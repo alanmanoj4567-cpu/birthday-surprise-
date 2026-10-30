@@ -1297,7 +1297,26 @@ function finishMemoryPages() {
     openSurprise(selectedGift);
   }, 300);
 }
- 
+function openSurprise(n) {
+  document.querySelectorAll(".reveal-box").forEach(el => {
+    el.classList.remove("open");
+  });
+
+  const box = document.getElementById("gift" + n);
+
+  if (!box) return;
+
+  box.classList.add("open");
+
+  setTimeout(() => {
+    box.scrollIntoView({
+      behavior: "smooth",
+      block: "center"
+    });
+  }, 80);
+
+  if (n === 3) celebrate();
+} 
 </script>
  
 <!-- ===== PAGE 2: PINK BIRTHDAY SCRAPBOOK ===== -->
