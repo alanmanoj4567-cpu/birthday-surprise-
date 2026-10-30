@@ -1197,5 +1197,103 @@ function makeWish(){document.getElementById("wishText").textContent="Wish made! 
 function celebrate(){const c=document.getElementById("confetti");const pieces=["💗","♡","🌸","✨","🎀"];for(let i=0;i<28;i++){const s=document.createElement("span");s.textContent=pieces[Math.floor(Math.random()*pieces.length)];s.style.left=Math.random()*100+"%";s.style.animationDelay=Math.random()*.8+"s";c.appendChild(s);setTimeout(()=>s.remove(),3500);}}
 function toggleMusic(){const audio=document.getElementById("ourSong"),label=document.getElementById("musicLabel");if(audio.paused){audio.play().then(()=>label.textContent="Pause our song").catch(()=>label.textContent="Add music/our-song.mp3");}else{audio.pause();label.textContent="Play our song";}}
 </script>
+ 
+<!-- ===== PAGE 2: PINK BIRTHDAY SCRAPBOOK ===== -->
+
+<section class="memory-page" id="memoryPage2">
+  <div class="pink-scrapbook">
+
+    <div class="pink-bow">🎀</div>
+
+    <div class="pink-title">
+      Happy<br>Birthday
+      <div>♡</div>
+    </div>
+
+    <div class="pink-letter">
+      Some people make the world softer,
+      brighter and kinder just by being in it...
+      You are one of them. ♡
+    </div>
+
+    <span class="pink-flower one">🌸</span>
+    <span class="pink-flower two">🌼</span>
+    <span class="pink-flower three">🌷</span>
+
+    <div class="polaroid p-one">
+      <img src="photos/page2-photo1.jpg" alt="Birthday memory one">
+    </div>
+
+    <div class="polaroid p-two">
+      <img src="photos/page2-photo2.jpg" alt="Birthday memory two">
+    </div>
+
+    <div class="polaroid p-three">
+      <img src="photos/page2-photo3.jpg" alt="Birthday memory three">
+    </div>
+
+    <div class="paper-note">
+      More love<br>
+      More happiness<br>
+      More you ♡
+    </div>
+
+    <div class="couple-doodle">🎂💕</div>
+
+  </div>
+
+  <div class="memory-navigation">
+    <button onclick="showMemoryPage('memoryPage3')">
+      Next Memory ♡
+    </button>
+  </div>
+</section>
+
+
+<!-- ===== PAGE 3: VINTAGE FILM SCRAPBOOK ===== -->
+
+<section class="memory-page" id="memoryPage3">
+  <div class="film-scrapbook">
+
+    <div class="film-bow">🎀</div>
+
+    <div class="film-photo large">
+      <div class="film-holes"></div>
+      <img src="photos/page3-photo1.jpg" alt="Our favourite memory">
+    </div>
+
+    <div class="film-photo small">
+      <div class="film-holes"></div>
+      <img src="photos/page3-photo2.jpg" alt="Another special memory">
+    </div>
+
+    <div class="birthday-letter">
+      <p>
+        happy birthday!!<br>
+        to my beautiful best friend thank...<br>
+        you for always making me smile<br>
+        and never judging me. you deserve<br>
+        all the happiness, and i hope to<br>
+        celebrate many more birthdays<br>
+        with you. i love you so much
+      </p>
+    </div>
+
+    <div class="film-decoration">
+      good things take time ♡
+    </div>
+
+  </div>
+
+  <div class="memory-navigation">
+    <button onclick="showMemoryPage('memoryPage2')">
+      Previous
+    </button>
+    <button onclick="finishMemoryPages()">
+      Continue ♥
+    </button>
+  </div>
+</section>
+ 
 </body>
 </html>
