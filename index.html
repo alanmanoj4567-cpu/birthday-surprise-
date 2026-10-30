@@ -1255,14 +1255,16 @@ function updateDots(){const dots=[...document.querySelectorAll(".code-dot")];dot
 function pressDigit(d){if(enteredCode.length<4){enteredCode+=d;updateDots();}if(enteredCode.length===4)document.getElementById("codeError").textContent="Tap ♥ to unlock your surprise";}
 function backspace(){enteredCode=enteredCode.slice(0,-1);updateDots();document.getElementById("codeError").textContent="Enter the 4-digit code, then tap ♥";}
 function checkCode(){if(enteredCode===SECRET_CODE){document.getElementById("lockScreen").style.display="none";document.getElementById("unlockedScreen").style.display="flex";window.scrollTo(0,0);celebrate();}else{document.getElementById("codeError").textContent="Oops, try our special code again 💗";enteredCode="";updateDots();}}
-function enterSite(which){document.getElementById("unlockedScreen").style.display="none";document.getElementById("mainSite").classList.add("show");window.scrollTo(0,0);if(which){setTimeout(()=>{document.getElementById("surprises").scrollIntoView({behavior:"smooth"});openSurprise(which);},250);}}
-function openSurprise(n){document.querySelectorAll(".reveal-box").forEach(el=>el.classList.remove("open"));const box=document.getElementById("gift"+n);box.classList.add("open");setTimeout(()=>box.scrollIntoView({behavior:"smooth",block:"center"}),80);if(n===3)celebrate();}
-function makeWish(){document.getElementById("wishText").textContent="Wish made! May this year bring you every beautiful thing your heart is hoping for. I love you! 💗";celebrate();}function closeSurprises(){
-  document.querySelectorAll(".reveal-box").forEach(el=>el.classList.remove("open"));
-  document.getElementById("surprises").scrollIntoView({behavior:"smooth"});
+let selectedGift = 1;
+
+function enterSite(which) {
+  selectedGift = Number(which) || 1;
+
+  document.getElementById("unlockedScreen").style.display = "none";
+  document.getElementById("mainSite").classList.remove("show");
+
+  showMemoryPage("memoryPage1");
 }
-function celebrate(){const c=document.getElementById("confetti");const pieces=["💗","♡","🌸","✨","🎀"];for(let i=0;i<28;i++){const s=document.createElement("span");s.textContent=pieces[Math.floor(Math.random()*pieces.length)];s.style.left=Math.random()*100+"%";s.style.animationDelay=Math.random()*.8+"s";c.appendChild(s);setTimeout(()=>s.remove(),3500);}}
-function toggleMusic(){const audio=document.getElementById("ourSong"),label=document.getElementById("musicLabel");if(audio.paused){audio.play().then(()=>label.textContent="Pause our song").catch(()=>label.textContent="Add music/our-song.mp3");}else{audio.pause();label.textContent="Play our song";}}
 
 function showMemoryPage(pageId) {
   document.querySelectorAll(".memory-page").forEach(page => {
@@ -1282,13 +1284,19 @@ function finishMemoryPages() {
     page.classList.remove("active");
   });
 
-  // Change this selector to the ID of your next existing website section.
-  const nextSection = document.getElementById("mainSite");
+  const mainSite = document.getElementById("mainSite");
+  mainSite.classList.add("show");
 
-  if (nextSection) {
-    nextSection.scrollIntoView({ behavior: "smooth" });
-  }
-   }
+  window.scrollTo({ top: 0, behavior: "smooth" });
+
+  setTimeout(() => {
+    document.getElementById("surprises").scrollIntoView({
+      behavior: "smooth"
+    });
+
+    openSurprise(selectedGift);
+  }, 300);
+}
  
 </script>
  
